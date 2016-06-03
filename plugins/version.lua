@@ -1,13 +1,11 @@
 do
 
 function run(msg, matches)
-    return "Self-Bot v2 \n by BeatBot Team :) <3 \n @BeatBot_Team"
+    return "سلف بات پدرام ??\nاز بيکاري ساختم ??\n\n------------------\n\n- اطلاعات من ?? :\n+989215402236\n@PEDIW\n\n-"
 end 
 return {
   patterns = {
-    "^#version$",
-    "^#bot$",
-    "^#selfbot$"
+    "^[/!#](version)$"
   },
   run = run
 }
