@@ -55,15 +55,15 @@ local function run(msg, matches)
     local receiver = get_receiver(msg)
     local chat = msg.to.id
     -- Id of the user and info about group / channel
-    if matches[1] == "#gid" then
+    if matches[1] == "gid" then
          if not is_sudo(msg) then 
             return nil
             end
         if permissions(msg.from.id, msg.to.id, "id") then
             if msg.to.type == 'channel' then
-                send_msg(msg.to.peer_id, 'SuperGroup ID: '..msg.to.id, ok_cb, false)
+                send_msg(msg.to.peer_id, 'SuperGroup ID ًںڈµ :\n'..msg.to.id, ok_cb, false)
             elseif msg.to.type == 'chat' then
-                send_msg(msg.to.peer_id, 'Group ID: '..msg.to.id, ok_cb, false)
+                send_msg(msg.to.peer_id, 'Group ID ًںڈµ :\n'..msg.to.id, ok_cb, false)
             end
         end
 elseif matches[1] == 'id' then
@@ -94,9 +94,9 @@ end
 
 return {
   patterns = {
-    "^#(id)$",
-    "^#gid$",
-    "^#(id) (.*)$"
+    "^[/!#](id)$",
+    "^[/!#](gid)$",
+    "^[/!#](id) (.*)$"
   },
   run = run
 }
